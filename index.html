@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      margin: 0 25% 0 25%;
+      min-height: 1100px;
+      overflow-x: hidden;
+    }
+    #hr{
+      border: none;
+      border-top: 2px solid red;      
+      margin-left: calc(-50%);
+      margin-right: calc(-25%);
+      width: 100vw;
+    }
+    #hr2{
+      margin-top: 45px;
+      border: none;
+      border-top: 1px solid black;      
+      margin-left: calc(-50%);
+      margin-right: calc(-25%);
+      width: 100vw;
+    }
+    .container1{
+      display: flex;
+      justify-content: flex-end;
+      gap: 6px;
+      font-size: 12px;
+      margin-top: 30px;
+      margin-bottom: 12px;
+    }
+    #BNK{
+      font-weight: bold;
+      color: red;
+    }
+    .container2{
+      display: flex;
+      justify-content: flex-end;
+      gap: 35px;
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 30px; 
+      font-size: 18px;
+    }
+    .container2-1{
+      display: flex;
+      margin-right: auto;
+      justify-content: flex-start;
+      gap: 5px;
+      font-weight: lighter;
+    }
+    .item2-1{
+      color: rgb(56, 54, 54);
+      font-size: 13px;
+      border: 1px solid grey;
+      box-sizing: border-box;
+      border-radius: 8px;
+      padding-top: 2px;
+      padding-bottom: 2px;
+      padding-left: 2px;
+      padding-right: 2px;
+    }
+    .container3{
+      display: flex;
+      flex-direction: row;
+      margin-top: 30px;
+    }
+    .container3-1{
+      display: flex;
+      flex-direction: column;
+      width: 160px;
+      padding-left: 20px;
+      color: white;
+      gap: 5px;
+    }
+    #red{
+      background-color: red;
+      margin-bottom: 8px;
+    }
+    #black{
+      background-color: black;
+      margin-bottom: 8px;
+    }
+    #green{
+      background-color: darkcyan;
+    }
+    .blue{
+      color: blue;
+    }
+    .item3{
+      font-family: "고딕";
+      display: flex;
+      flex: 1 1 51%;
+      justify-content: flex-end;
+      padding-right: 15px;
+    }
+    .item3-1{
+      width: 180px;
+      border: 1px solid white;
+      box-sizing: border-box;
+      border-radius: 12px;
+    }
+    .container4{
+      display: flex;
+      flex-direction: row;
+      margin-top: 50px;
+      margin-bottom: 40px;
+    }
+    .item4{
+      flex: 1 1 20%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; 
+      text-align: center;
+    }
+    .item4-1{
+      font-weight: bold;
+      font-size: 15px;
+    }
+    .item4-2{
+      font-weight: 400;
+      color: rgb(90, 88, 88);
+    }
+    .container5{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      width: 700px;
+    }
+    .container5-1{
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      margin-right: -150px;
+    }
+    .item5{
+      font-weight: bold;
+    }
+    .item5-1{
+      display: flex;
+      font-size: 13px;
+      font-weight: bold;
+      color: rgb(36, 35, 35);
+      display: flex;
+      border: 1px solid black;
+      box-sizing: border-box;
+      border-radius: 8px;
+      flex-direction: row;
+      flex: 1 1 25%;
+      width: 170px;
+      height: 50px;
+      margin-right: 12px;
+      margin-bottom: 6px;
+      align-items: center;
+      justify-content: center;
+    }
+    .item5-2{
+      display: flex;
+      margin-right: 50px;
+    }
+    .container6{
+      display: flex;
+      font-size: 13px;
+      color: rgb(167, 164, 164);
+    }
+    .container6-1{
+      display: flex;
+      justify-content: start;
+    }
+  </style>
+</head>
+<body>
+  <div class="container1">
+    <div class="item1">로그인</div>
+    <div class="item1">|</div>
+    <div class="item1">인증센터</div>
+     <div class="item1">|</div>
+    <div class="item1">은행소개</div>
+     <div class="item1">|</div>
+    <div class="item1">Global</div>
+  </div>
+  <div class="container2">
+    <div class="container2-1">
+      <div class="item2" id="BNK">BNK</div>
+      <div class="item2">부산은행</div>
+    </div>
+    <div class="item2">개인뱅킹</div>
+    <div class="item2">기업뱅킹</div>
+    <div class="item2">금융상품</div>
+    <div class="item2 item2-1">검색하기</div>
+    <div class="item2 item2-1">전체미뉴</div>
+  </div>
+  <hr id="hr">
+  <div class="container3">
+    <div><img src="css/images/lion.jpg" width="770px" height="300px"></div>
+    <div class="container3-1">
+      <div class="item3 item3-1" id="red"><br><br>빠른조회서비스</div>
+      <div class="item3 item3-1" id="black"><br><br>사고분실신고</div>
+      <div class="item3 item3-1" id="green"><br><br>금융소비자보호</div>
+    </div>
+  </div>
+  <div class="container4">
+    <div class="item4"><img src="css/images/star.jpg" width="100px" height="100px"><span class="item4-1">베스트상품</span><span class="item4-1 item4-2">온라인판매TOP5</span></div>
+    <div class="item4"><img src="css/images/dart.jpg" width="100px" height="100px"><span class="item4-1">목적별상품</span><span class="item4-1 item4-2">상황에 맞는 자금 관리</span></div>
+    <div class="item4"><img src="css/images/grape.jpg" width="100px" height="90px"><span class="item4-1">생애주기별상품</span><span class="item4-1 item4-2">청소년기와 함꼐 해야하는</span></div>
+    <div class="item4"><img src="css/images/person.jpg" width="100px" height="100px"><span class="item4-1">고객별상품</span><span class="item4-1 item4-2">유아기부터 은퇴설계까지</span></div>
+    <div class="item4"><img src="css/images/new.jpg" width="100px" height="100px"><span class="item4-1">신규상품</span><span class="item4-1 item4-2">최근6개월이내 출시</span></div>
+  </div>
+  <div class="container5">
+    <div class="item5">새소식</div>
+    <div class="item5">이벤트</div>
+    <div class="container5-1">
+      <div class="item5-1">상품공시실</div>
+      <span class="item5-1">금융소비자보호</span>
+      <div class="item5-1">비교조화서비스</div>
+      <span class="item5-1 item5-2">서식/약관/자료실</span>
+      <div class="item5-1 item5-2">고객센터</div>
+      <span class="item5-1 item5-2">서민금융</span>
+    </div>
+  </div>
+  <hr id="hr2"></hr>
+  <div class="container6">
+    <div class="item6 blue">개인정보처리방침</div>
+    <div class="item6">경영공시</div>
+    <div class="item6">고객정보취급방침</div>
+    <div class="item6">보호금융상품등록부</div>
+    <div class="item6">상품공시실</div>
+    <div class="item6">전자민원접수</div>
+    <div class="item6">전자금융이용자보호수칙</div>
+    <div class="item6">전자금융사기피해금환급제도</div>
+    <div class="container6-1">
+      <div class="item6">위치기반서비스 이용약관</div>
+    </div>
+  </div>
+</body>
+</html>
