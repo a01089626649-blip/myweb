@@ -36,6 +36,29 @@
       font-size: 25px;
       margin-left: 15px;
     }
+    /* -------------------------------------- */
+    /* 신규 추가: 중앙 상단 파일 열기 버튼 스타일 */
+    /* -------------------------------------- */
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .file-btn {
+      display: inline-block;
+      font-weight: bold;
+      text-decoration: none;
+      background-color: #007aff; /* 눈에 띄는 파란색 포인트 */
+      color: white;
+      border-radius: 15px;
+      padding: 8px 16px;
+      font-size: 14px;
+      transition: background-color 0.2s;
+    }
+    .file-btn:hover {
+      background-color: #0056b3; /* 마우스 올렸을 때 어두워짐 */
+    }
+    /* -------------------------------------- */
     .menu-wrap {
       margin-right: 20px;
     }
@@ -79,7 +102,12 @@
   
   <header>
     <div class="box box1">
-      <h1>이달의 신상!!<span id="font">갤럭시 Z폴드8울트라</span></h1>
+      <!-- 정렬을 위해 타이틀과 버튼을 .header-left 마크업으로 묶었습니다 -->
+      <div class="header-left">
+        <h1>이달의 신상!!<span id="font">갤럭시 Z폴드8울트라</span></h1>
+        <!-- 파일 열기 버튼 (새 탭에서 열리도록 target="_blank" 처리) -->
+        <a href="document.pdf" target="_blank" class="file-btn">📄 기획서 열기</a>
+      </div>
       <div class="menu-wrap">
         <a href="menu.html" class="menu">전체상품</a>
       </div>
