@@ -5,237 +5,98 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
-    body{
-      margin: 0 25% 0 25%;
-      min-height: 1100px;
-      overflow-x: hidden;
+    .box {
+      width: 900px;
+      margin: 0 auto;
     }
-    #hr{
-      border: none;
-      border-top: 2px solid red;      
-      margin-left: calc(-50%);
-      margin-right: calc(-25%);
-      width: 100vw;
+    header {
+      height: 130px;
+      background-color: #f5f5f5;
+      border-bottom: 1px solid #ddd;
     }
-    #hr2{
-      margin-top: 45px;
-      border: none;
-      border-top: 1px solid black;      
-      margin-left: calc(-50%);
-      margin-right: calc(-25%);
-      width: 100vw;
-    }
-    .container1{
+    .box1, .top {
       display: flex;
-      justify-content: flex-end;
-      gap: 6px;
-      font-size: 12px;
-      margin-top: 30px;
-      margin-bottom: 12px;
-    }
-    #BNK{
-      font-weight: bold;
-      color: red;
-    }
-    .container2{
-      display: flex;
-      justify-content: flex-end;
-      gap: 35px;
-      font-size: 18px;
-      font-weight: bold;
-      margin-bottom: 30px; 
-      font-size: 18px;
-    }
-    .container2-1{
-      display: flex;
-      margin-right: auto;
-      justify-content: flex-start;
-      gap: 5px;
-      font-weight: lighter;
-    }
-    .item2-1{
-      color: rgb(56, 54, 54);
-      font-size: 13px;
-      border: 1px solid grey;
-      box-sizing: border-box;
-      border-radius: 8px;
-      padding-top: 2px;
-      padding-bottom: 2px;
-      padding-left: 2px;
-      padding-right: 2px;
-    }
-    .container3{
-      display: flex;
-      flex-direction: row;
-      margin-top: 30px;
-    }
-    .container3-1{
-      display: flex;
-      flex-direction: column;
-      width: 160px;
-      padding-left: 20px;
-      color: white;
-      gap: 5px;
-    }
-    #red{
-      background-color: red;
-      margin-bottom: 8px;
-    }
-    #black{
-      background-color: black;
-      margin-bottom: 8px;
-    }
-    #green{
-      background-color: darkcyan;
-    }
-    .blue{
-      color: blue;
-    }
-    .item3{
-      font-family: "고딕";
-      display: flex;
-      flex: 1 1 51%;
-      justify-content: flex-end;
-      padding-right: 15px;
-    }
-    .item3-1{
-      width: 180px;
-      border: 1px solid white;
-      box-sizing: border-box;
-      border-radius: 12px;
-    }
-    .container4{
-      display: flex;
-      flex-direction: row;
-      margin-top: 50px;
-      margin-bottom: 40px;
-    }
-    .item4{
-      flex: 1 1 20%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center; 
-      text-align: center;
-    }
-    .item4-1{
-      font-weight: bold;
-      font-size: 15px;
-    }
-    .item4-2{
-      font-weight: 400;
-      color: rgb(90, 88, 88);
-    }
-    .container5{
-      display: flex;
-      flex-wrap: wrap;
       justify-content: space-between;
-      width: 700px;
-    }
-    .container5-1{
-      display: flex;
-      flex-wrap: wrap;
-      flex-direction: column;
-      margin-right: -150px;
-    }
-    .item5{
-      font-weight: bold;
-    }
-    .item5-1{
-      display: flex;
-      font-size: 13px;
-      font-weight: bold;
-      color: rgb(36, 35, 35);
-      display: flex;
-      border: 1px solid black;
-      box-sizing: border-box;
-      border-radius: 8px;
-      flex-direction: row;
-      flex: 1 1 25%;
-      width: 170px;
-      height: 50px;
-      margin-right: 12px;
-      margin-bottom: 6px;
+      height: 100%;
       align-items: center;
-      justify-content: center;
     }
-    .item5-2{
-      display: flex;
-      margin-right: 50px;
+    .main {
+      font-size: 2rem;
+      font-weight: bold;
+      text-decoration: none;
+      color: black;
     }
-    .container6{
-      display: flex;
-      font-size: 13px;
-      color: rgb(167, 164, 164);
+    .log a {
+      gap: 25px;
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
     }
-    .container6-1{
-      display: flex;
-      justify-content: start;
+    #font {
+      font-size: 25px;
+      margin-left: 15px;
     }
+    .menu-wrap {
+      margin-right: 20px;
+    }
+    .menu {
+      display: inline-block;
+      font-weight: bold;
+      text-decoration: none;
+      background-color: black;
+      color: white;
+      border-radius: 15px;
+      padding: 12px 24px;
+    }
+    #image {
+      width: 550px;
+      height: 500px;
+      margin-top: 20px;
+      float: left;
+      object-fit: cover;
+    }
+    #content {
+      margin-top: 100px;
+      margin-right: 40px;
+      width: 300px;
+      float: right;
+    }
+    #content p {
+      font-size: 20px;
+    }
+   
   </style>
 </head>
 <body>
-  <div class="container1">
-    <div class="item1">로그인</div>
-    <div class="item1">|</div>
-    <div class="item1">인증센터</div>
-     <div class="item1">|</div>
-    <div class="item1">은행소개</div>
-     <div class="item1">|</div>
-    <div class="item1">Global</div>
-  </div>
-  <div class="container2">
-    <div class="container2-1">
-      <div class="item2" id="BNK">BNK</div>
-      <div class="item2">부산은행</div>
-    </div>
-    <div class="item2">개인뱅킹</div>
-    <div class="item2">기업뱅킹</div>
-    <div class="item2">금융상품</div>
-    <div class="item2 item2-1">검색하기</div>
-    <div class="item2 item2-1">전체미뉴</div>
-  </div>
-  <hr id="hr">
-  <div class="container3">
-    <div><img src="css/images/lion.jpg" width="770px" height="300px"></div>
-    <div class="container3-1">
-      <div class="item3 item3-1" id="red"><br><br>빠른조회서비스</div>
-      <div class="item3 item3-1" id="black"><br><br>사고분실신고</div>
-      <div class="item3 item3-1" id="green"><br><br>금융소비자보호</div>
+  <div class="top box">
+    <a href="index.html" class="main">Samsung</a>
+    <div class="log">
+      <a href="#" class="top-menu">로그인</a>
+      <a href="#" class="top-menu">회원가입</a>
+      <a href="#" class="top-menu">고객센터</a>
     </div>
   </div>
-  <div class="container4">
-    <div class="item4"><img src="css/images/star.jpg" width="100px" height="100px"><span class="item4-1">베스트상품</span><span class="item4-1 item4-2">온라인판매TOP5</span></div>
-    <div class="item4"><img src="css/images/dart.jpg" width="100px" height="100px"><span class="item4-1">목적별상품</span><span class="item4-1 item4-2">상황에 맞는 자금 관리</span></div>
-    <div class="item4"><img src="css/images/grape.jpg" width="100px" height="90px"><span class="item4-1">생애주기별상품</span><span class="item4-1 item4-2">청소년기와 함꼐 해야하는</span></div>
-    <div class="item4"><img src="css/images/person.jpg" width="100px" height="100px"><span class="item4-1">고객별상품</span><span class="item4-1 item4-2">유아기부터 은퇴설계까지</span></div>
-    <div class="item4"><img src="css/images/new.jpg" width="100px" height="100px"><span class="item4-1">신규상품</span><span class="item4-1 item4-2">최근6개월이내 출시</span></div>
-  </div>
-  <div class="container5">
-    <div class="item5">새소식</div>
-    <div class="item5">이벤트</div>
-    <div class="container5-1">
-      <div class="item5-1">상품공시실</div>
-      <span class="item5-1">금융소비자보호</span>
-      <div class="item5-1">비교조화서비스</div>
-      <span class="item5-1 item5-2">서식/약관/자료실</span>
-      <div class="item5-1 item5-2">고객센터</div>
-      <span class="item5-1 item5-2">서민금융</span>
+  
+  <header>
+    <div class="box box1">
+      <h1>이달의 신상!!<span id="font">갤럭시 Z폴드8울트라</span></h1>
+      <div class="menu-wrap">
+        <a href="menu.html" class="menu">전체상품</a>
+      </div>
     </div>
-  </div>
-  <hr id="hr2"></hr>
-  <div class="container6">
-    <div class="item6 blue">개인정보처리방침</div>
-    <div class="item6">경영공시</div>
-    <div class="item6">고객정보취급방침</div>
-    <div class="item6">보호금융상품등록부</div>
-    <div class="item6">상품공시실</div>
-    <div class="item6">전자민원접수</div>
-    <div class="item6">전자금융이용자보호수칙</div>
-    <div class="item6">전자금융사기피해금환급제도</div>
-    <div class="container6-1">
-      <div class="item6">위치기반서비스 이용약관</div>
+  </header>
+
+  <main>
+    <div class="box">
+      <img src="img/zfold8ultra.jpg" id="image">
+      <div id="content">
+        <h2>"폴더블의 한계를 깨다."</h2><p>여권만큼 작게 접히고, 책처럼 넓게<br> 펼쳐집니다.역대 가장 가벼운 201g의무게에 담아낸 완전히 새로운 4:3 대화면.
+            주머니에 쏙 들어가는 태블릿,갤럭시 Z 폴드8을 지금 가장 먼저 만나보세요.</p>
+      </div>
     </div>
-  </div>
+  </main>
+  <footer>
+    
+  </footer>
 </body>
 </html>
