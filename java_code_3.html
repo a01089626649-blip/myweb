@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Java&Sql연습</title>
+  <style>
+    body {
+      width: 800px;
+      height: 100vh;
+      margin: 0 auto;
+      text-align: center;
+    }
+    header a{
+      color: black;
+      text-decoration: none;
+    }
+    div a {
+      margin: 30px;
+    }
+    hr {
+      border: 2px solid black;
+    }
+    div {
+      margin-top: 10px;
+      text-align: center;  
+    }
+    div a {
+      text-decoration: none;
+      color: black;
+    }
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(1, 100%);
+      gap: 20px;
+      margin-top: 15%;
+    }
+    .grid-container textarea {
+      width: 100%;
+      box-sizing: border-box;
+      resize: none; /* 사용자가 마우스로 상자 크기를 마음대로 조절하지 못하게 고정 (선택사항) */
+    }
+    .grid-container h3 {
+      font-size: 1.05rem;
+    }
+    .answer {
+      font-size: 0.8rem;
+      color: white;
+    }
+    .answer:hover {
+      color: black;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1><a href="java_code.html">배열연습!!!</a></h1>
+  </header>
+  <hr>
+  <div class="grid-container">
+    <h3>배열 탐색하기 (난이도: 중)<br>설명: 정수형 배열(scores)을 매개변수로 받아 배열 안의 모든 점수의 평균(double)을 계산하여 반환하는 average(int[] scores) 메서드를 작성하세요. (단, 평균 계산 시 소수점까지 나오도록 double 타입 변환에 주의하세요.)<p class="answer">double average(int[] scores) {int sum = 0;for (int i = 0; i < scores.length; i++) {sum += scores[i];}return (double) sum / scores.length;}</p><p><textarea rows="16"></textarea></p></h3>
+    <h3>배열에서 짝수의 개수 세기 (난이도: 중)<br>설명: 정수형 배열(numbers)을 매개변수로 받아, 배열에 담긴 숫자들 중 짝수(2로 나누어떨어지는 수)의 개수를 세어 그 개수를 반환하는 countEvens(int[] numbers) 메서드를 작성하세요.<p class="answer">int countEvens(int[] numbers){int count = 0;for (int i = 0; i < numbers.length; i++) {if (numbers[i] % 2 == 0) {count++;}}return count;}</p><p><textarea rows="16"></textarea></p></h3>
+  </div>
+</body>
+</html>
