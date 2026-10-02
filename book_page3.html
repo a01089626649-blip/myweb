@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>미운아기오리</title>
+  <style>
+    /* 화면 전체 기본 세팅 */
+    body {
+      width: 100%;
+      min-height: 100vh;
+      margin: 0;
+      padding: 0;
+      background-color: #ededf0; /* 전체 바깥 배경은 어둡게 */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    header {
+      display: block;
+      position: absolute;
+      top: 5%;
+      right: 50%;
+    }
+
+    /* ★ 핵심 1: 화면 전체가 아니라 이 800px 상자가 '책 표지'이자 절대 기준점이 됩니다 ★ */
+    .first-page {
+      width: 1600px;
+      height: 700px; /* 표지 형태를 구성하기 위해 세로 높이를 시원하게 부여 */
+      background-image: url(img/duck.jpg);/* 눈으로 확인하기 쉽게 표지 전용 배경색 부여 */
+      background-repeat: no-repeat;
+      background-size: cover;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 12px;
+      position: relative; /* ◀ 이 선언 덕분에 내부 absolute 요소들이 이 상자를 기준으로 움직입니다 */
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    }
+    .page {
+      width: 1600px;
+      height: 700px; /* 표지 형태를 구성하기 위해 세로 높이를 시원하게 부여 */
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 12px;
+      position: relative; /* ◀ 이 선언 덕분에 내부 absolute 요소들이 이 상자를 기준으로 움직입니다 */
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    }
+    .page-left, .page-right {
+      flex: 1;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }   
+    .page {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      overflow: hidden; /* 자식 상자들이 둥근 모서리 밖으로 삐져나가지 않게 마감 */
+    }
+    
+    header h1 {
+      color: #ffffff;
+      font-size: 2.5rem;
+      margin: 0;
+    }
+
+    /* ★ 핵심 3: 버튼을 책 표지의 '우측 하단' 구석자리에 고정 ★ */
+    .btn-page #next {
+      position: absolute;
+      top: 45%;      /* 표지 밑바닥 벽에서 40px 위로 */
+      right: 6%;       /* 표지 오른쪽 벽에서 40px 안쪽으로 */
+    }
+    .btn-page #previous{
+      position: absolute;
+      top: 45%;      /* 표지 밑바닥 벽에서 40px 위로 */
+      left: 6%;       /* 표지 오른쪽 벽에서 40px 안쪽으로 */
+    }
+    /* 책 읽기 링크 버튼 스타일 마감 */
+    .btn-page a {
+      display: inline-block;
+      border: 1px solid black;
+      border-radius: 20px;
+      color: black;
+      text-decoration: none;
+      padding: 10px 24px;
+      font-weight: bold;
+      transition: background-color 0.2s;
+    }
+    .btn a:hover {
+      background-color: black;
+      color: white;
+    }
+    .page-right h3 {
+      padding-bottom: 20px;
+    }
+    h3 {
+      font-size: 1.3rem;
+      letter-spacing: 1.5px; /* 양옆 자간 살짝 넓히기 */
+      line-height: 1.9;      /* 위아래 행간 시원하게 넓히기 */
+      word-spacing: 2px;     /* 띄어쓰기 간격 살짝 넓히기 */
+    }
+    .page-left p {
+      width: 100%;          /* 부모 박스 너비 */
+      height: 500px;        /* 👈 원하시는 페이지의 전체 세로 높이 고정 */
+      margin: 0;
+      padding: 0;
+        
+      /* 남는 여백 안에서 그림이 항상 정중앙에 오도록 정렬 */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+   .page-left p img {
+      width: 100%;
+      height: 100%;
+  
+      /* ⭐ 핵심 속성: 그림을 절대 자르지 않고 상자 안에 쏙 들어가게 맞춤 */
+      object-fit: contain;  
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h2>3페이지</h2>
+  </header>
+
+  <!-- 가상의 책 표지 레이아웃 (모든 내부 좌표의 우주 기준점) -->
+  <div class="page">
+    <div class="page-left">
+      <p><img src="img/page3.jpg"></p>
+    </div>
+    <div class="page-right">
+      <h3>엄마 오리는 아기들을 데리고 농장으로 향했습니다. 하지만 농장의 동물들은<br>
+          회색 아기 오리를 보자마자 수군거리기 시작했습니다.<br> 
+          "저런! 뭐 저렇게 이상하게 생겼지?" 오리들과 닭들은 아기 오리를<br>
+          이리저리 밀치고 쪼아댔으며, 수컷 칠면조는 몸을 부풀리며 위협했습니다.<br>
+          날이 갈수록 괴롭힘은 심해졌고, 심지어 형제들과 엄마 오리마저 차라리<br>
+          멀리 가버렸으면 좋겠다며 차갑게 외면했습니다.<br>
+          결국 상처받은 아기 오리는 울타리를 넘어 도망쳤습니다.</h3>
+    </div>
+  </div>
+  <div class="btn-page">
+      <a href="book_page4.html" id="next">다음 페이지</a>
+      <a href="book_page2.html" id="previous">이전 페이지</a>
+  </div>
+</body>
+</html>

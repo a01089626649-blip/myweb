@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>생애마지막순간</title>
+    <!-- 웅장하고 깊이감 있는 명조체 로드 -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Nanum+Myeongjo:wght@700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* 기본 리셋 및 전체 배경 */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: #0b0b0c;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        /* 인트로 전체 컨테이너 (와이어프레임 사각형 틀) */
+        .intro-container {
+            width: 450px;
+            height: 450px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 16px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px;
+            position: relative;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+            
+            /* 심해나 우주를 연상시키는 중심부 빛 확산 그라데이션 */
+            background: radial-gradient(circle at center, #161824 0%, #0b0b0c 100%);
+        }
+
+        /* 배경에 웅장함을 더해주는 미세한 안개/빛 레이어 효과 */
+        .intro-container::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle at top, rgba(255, 255, 255, 0.03), transparent 70%);
+            pointer-events: none;
+        }
+
+        /* 와이어프레임 텍스트: 깊이감 있는 서사적 명조체와 줄간격 */
+        .intro-heading {
+            font-family: 'Nanum Myeongjo', serif;
+            font-size: 1.65rem;
+            font-weight: 800;
+            line-height: 1.8;
+            letter-spacing: -0.5px;
+            color: #f5f5f7;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+            margin-bottom: 45px;
+            word-break: keep-all;
+        }
+
+        /* 세로 방향 화살표와 여백을 대체하는 미니멀 시각 가이드 선 */
+        .intro-divider {
+            width: 1px;
+            height: 45px;
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0.4), transparent);
+            margin-bottom: 35px;
+        }
+
+        /* 메시지 보내기 버튼 */
+        .intro-btn {
+            background-color: #ffffff;
+            color: #0b0b0c;
+            border: none;
+            padding: 15px 40px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- 웅장한 비주얼의 인트로 화면 단독 구성 -->
+    <div class="intro-container">
+        <h1 class="intro-heading">
+            내일 죽는다면<br>
+            누구에게 메시지를<br>
+            보낼 것 입니까?
+        </h1>
+        
+        <!-- 와이어프레임의 화살표 역할을 하는 디자인 라인 -->
+        <div class="intro-divider"></div>
+        
+        <a href="letter_main.html"><button class="intro-btn">메시지 보내기</button></a>
+    </div>
+
+</body>
+</html>
