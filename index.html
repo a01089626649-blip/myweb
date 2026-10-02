@@ -1,130 +1,109 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <style>
-    .box {
-      width: 900px;
-      margin: 0 auto;
-    }
-    header {
-      height: 130px;
-      background-color: #f5f5f5;
-      border-bottom: 1px solid #ddd;
-    }
-    .box1, .top {
-      display: flex;
-      justify-content: space-between;
-      height: 100%;
-      align-items: center;
-    }
-    .main {
-      font-size: 2rem;
-      font-weight: bold;
-      text-decoration: none;
-      color: black;
-    }
-    .log a {
-      gap: 25px;
-      text-decoration: none;
-      color: black;
-      font-weight: bold;
-    }
-    #font {
-      font-size: 25px;
-      margin-left: 15px;
-    }
-    /* -------------------------------------- */
-    /* 신규 추가: 중앙 상단 파일 열기 버튼 스타일 */
-    /* -------------------------------------- */
-    .header-left {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-    .file-btn {
-      display: inline-block;
-      font-weight: bold;
-      text-decoration: none;
-      background-color: #007aff; /* 눈에 띄는 파란색 포인트 */
-      color: white;
-      border-radius: 15px;
-      padding: 8px 16px;
-      font-size: 14px;
-      transition: background-color 0.2s;
-    }
-    .file-btn:hover {
-      background-color: #0056b3; /* 마우스 올렸을 때 어두워짐 */
-    }
-    /* -------------------------------------- */
-    .menu-wrap {
-      margin-right: 20px;
-    }
-    .menu {
-      display: inline-block;
-      font-weight: bold;
-      text-decoration: none;
-      background-color: black;
-      color: white;
-      border-radius: 15px;
-      padding: 12px 24px;
-    }
-    #image {
-      width: 550px;
-      height: 500px;
-      margin-top: 20px;
-      float: left;
-      object-fit: cover;
-    }
-    #content {
-      margin-top: 100px;
-      margin-right: 40px;
-      width: 300px;
-      float: right;
-    }
-    #content p {
-      font-size: 20px;
-    }
-   
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>생애마지막순간</title>
+    <!-- 웅장하고 깊이감 있는 명조체 로드 -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Nanum+Myeongjo:wght@700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* 기본 리셋 및 전체 배경 */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: #0b0b0c;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        /* 인트로 전체 컨테이너 (와이어프레임 사각형 틀) */
+        .intro-container {
+            width: 450px;
+            height: 450px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 16px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px;
+            position: relative;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+            
+            /* 심해나 우주를 연상시키는 중심부 빛 확산 그라데이션 */
+            background: radial-gradient(circle at center, #161824 0%, #0b0b0c 100%);
+        }
+
+        /* 배경에 웅장함을 더해주는 미세한 안개/빛 레이어 효과 */
+        .intro-container::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle at top, rgba(255, 255, 255, 0.03), transparent 70%);
+            pointer-events: none;
+        }
+
+        /* 와이어프레임 텍스트: 깊이감 있는 서사적 명조체와 줄간격 */
+        .intro-heading {
+            font-family: 'Nanum Myeongjo', serif;
+            font-size: 1.65rem;
+            font-weight: 800;
+            line-height: 1.8;
+            letter-spacing: -0.5px;
+            color: #f5f5f7;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+            margin-bottom: 45px;
+            word-break: keep-all;
+        }
+
+        /* 세로 방향 화살표와 여백을 대체하는 미니멀 시각 가이드 선 */
+        .intro-divider {
+            width: 1px;
+            height: 45px;
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0.4), transparent);
+            margin-bottom: 35px;
+        }
+
+        /* 메시지 보내기 버튼 */
+        .intro-btn {
+            background-color: #ffffff;
+            color: #0b0b0c;
+            border: none;
+            padding: 15px 40px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(255, 255, 255, 0.1);
+        }
+    </style>
 </head>
 <body>
-  <div class="top box">
-    <a href="index.html" class="main">Samsung</a>
-    <div class="log">
-      <a href="#" class="top-menu">로그인</a>
-      <a href="#" class="top-menu">회원가입</a>
-      <a href="#" class="top-menu">고객센터</a>
+    <!-- 웅장한 비주얼의 인트로 화면 단독 구성 -->
+    <div class="intro-container">
+        <h1 class="intro-heading">
+            내일 죽는다면<br>
+            누구에게 메시지를<br>
+            보낼 것 입니까?
+        </h1>
+        
+        <!-- 와이어프레임의 화살표 역할을 하는 디자인 라인 -->
+        <div class="intro-divider"></div>
+        
+        <a href="main.html"><button class="intro-btn">메시지 보내기</button></a>
     </div>
-  </div>
-  
-  <header>
-    <div class="box box1">
-      <!-- 정렬을 위해 타이틀과 버튼을 .header-left 마크업으로 묶었습니다 -->
-      <div class="header-left">
-        <h1>이달의 신상!!<span id="font">갤럭시 Z폴드8울트라</span></h1>
-        <!-- 파일 열기 버튼 (새 탭에서 열리도록 target="_blank" 처리) -->
-        <a href="document.pdf" target="_blank" class="file-btn">📄 기획서 열기</a>
-      </div>
-      <div class="menu-wrap">
-        <a href="menu.html" class="menu">전체상품</a>
-      </div>
-    </div>
-  </header>
 
-  <main>
-    <div class="box">
-      <img src="css/images/zfold8ultra.jpg" id="image">
-      <div id="content">
-        <h2>"폴더블의 한계를 깨다."</h2><p>여권만큼 작게 접히고, 책처럼 넓게<br> 펼쳐집니다.역대 가장 가벼운 201g의무게에 담아낸 완전히 새로운 4:3 대화면.
-            주머니에 쏙 들어가는 태블릿,갤럭시 Z 폴드8을 지금 가장 먼저 만나보세요.</p>
-      </div>
-    </div>
-  </main>
-  <footer>
-    
-  </footer>
 </body>
 </html>

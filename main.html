@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>생애마지막순간</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang&family=Nanum+Gothic&family=Nanum+Myeongjo&family=Noto+Sans+KR:wght@100..900&family=Noto+Serif+KR:wght@200..900&display=swap" rel="stylesheet">
+  <style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    body {
+        background-color: #0b0b0c;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+    }
+    /* 라디오 버튼 숨김 */
+    input[type="radio"] {
+      display: none !important;
+    }
+    /* 메인 컨테이너 */
+    .main-container {
+        width: 450px;
+        height: 450px;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 16px;
+        background-color: #121214; 
+        padding: 25px;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+    }
+
+    /* 상단 폰트 행 */
+    .font-selection-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        margin-bottom: 25px;
+    }
+
+    /* 개별 글꼴 버튼 상자 */
+    .font-box-item {
+        flex: 1;
+        height: 70px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background-color: rgba(255, 255, 255, 0.02);
+        border-radius: 8px;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 6px;
+        transition: all 0.2s ease;
+    }
+    
+    .font-name {
+        font-size: 0.75rem;
+        color: rgba(255, 255, 255, 0.4);
+        font-family: sans-serif; 
+    }
+    .font-preview {
+        font-size: 1rem;
+        color: rgba(255, 255, 255, 0.8);
+    }
+
+    /* 선택 상태 CSS 불 켜기 */
+    input[type="radio"]:checked + .font-box-item {
+        border-color: #ffffff;
+        background-color: rgba(255, 255, 255, 0.08);
+    }
+    input[type="radio"]:checked + .font-box-item .font-name {
+        color: rgba(255, 255, 255, 0.8);
+        font-weight: bold;
+    }
+    input[type="radio"]:checked + .font-box-item .font-preview {
+        color: #ffffff;
+    }
+
+    /* 하단 메시지 작성 영역 */
+    .message-area-container {
+        flex: 1;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+    }
+    .message-textarea-mock {
+        width: 100%;
+        flex: 1;
+        background-color: rgba(255, 255, 255, 0.01);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 12px;
+        padding: 20px;
+        padding-bottom: 65px; 
+        font-size: 1.05rem;
+        color: #ffffff;
+        line-height: 1.6;
+        resize: none;
+        outline: none;
+    }
+    .message-textarea-mock:focus {
+        border-color: rgba(255, 255, 255, 0.4);
+    }
+
+    /* 전송 버튼 */
+    .submit-button-mock {
+        position: absolute;
+        right: 15px;
+        bottom: 15px;
+        background-color: #ffffff;
+        color: #0b0b0c;
+        border: none;
+        padding: 10px 22px;
+        font-size: 0.9rem;
+        font-weight: 700;
+        border-radius: 6px;
+        cursor: pointer;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+    .font-selection-row:has(#noto-sans-kr:checked) ~ .message-area-container #msg-input {
+      font-family: "Noto Sans KR", cursive;
+      font-weight: 400;
+      font-style: normal;
+      color: white;
+      font-size: 1.3rem;
+    }
+    .font-selection-row:has(#gowun-batang:checked) ~ .message-area-container #msg-input {
+      font-family: "Gowun Batang", cursive;
+      font-weight: 400;
+      font-style: normal;
+      color: white;
+      font-size: 1.3rem;
+    }
+    .font-selection-row:has(#noto-serif-kr:checked) ~ .message-area-container #msg-input {
+      font-family: "Noto Serif KR", serif;
+      font-weight: 400;
+      font-style: normal;
+      color: white;
+      font-size: 1.3rem;
+    }
+    .font-selection-row:has(#nanum-gothic:checked) ~ .message-area-container #msg-input {
+      font-family: "Nanum Gothic", cover; 
+      font-weight: 400;
+      font-style: normal;
+      color: white;
+      font-size: 1.3rem;
+    }
+  </style>
+</head>
+<body>
+   <div class="main-container">
+        
+        <div class="font-selection-row">
+            
+            <!-- 1번 폰트: 본고딕 -->
+            <input type="radio" name="font" id="noto-sans-kr" checked onchange="updateTextareaFont('noto-sans-kr')">
+            <label for="noto-sans-kr" class="font-box-item">
+                <span class="font-name">본고딕</span>
+                <span class="font-preview noto-sans-kr">마음</span>
+            </label>
+            
+            <!-- 2번 폰트: 고운바탕 -->
+            <input type="radio" name="font" id="gowun-batang" onchange="updateTextareaFont('gowun-batang-regular')">
+            <label for="gowun-batang" class="font-box-item">
+                <span class="font-name">고운바탕</span>
+                <span class="font-preview gowun-batang-regular">마음</span>
+            </label>
+            
+            <!-- 3번 폰트: 본명조 -->
+            <input type="radio" name="font" id="noto-serif-kr" onchange="updateTextareaFont('noto-serif-kr')">
+            <label for="noto-serif-kr" class="font-box-item">
+                <span class="font-name">본명조</span>
+                <span class="font-preview noto-serif-kr">마음</span>
+            </label>
+            
+            <!-- 4번 폰트: 나눔 명조 -->
+            <input type="radio" name="font" id="nanum-gothic" onchange="updateTextareaFont('nanum-myeongjo-regular')">
+            <label for="nanum-gothic" class="font-box-item">
+                <span class="font-name">나눔 고딕</span>
+                <span class="font-preview nanum-myeongjo-regular">마음</span>
+            </label>
+            
+        </div>
+
+        <!-- 메시지 입력창 및 내부 우측 하단 버튼 -->
+        <div class="message-area-container">
+            <textarea id="msg-input" class="message-textarea-mock noto-sans-kr" placeholder="마지막 마음을 이곳에 적어주세요..."></textarea>
+            <button class="submit-button-mock">전송</button>
+        </div>
+        
+    </div>
+
+    <script>
+      function updateTextareaFont(className) {
+        const textarea = document.getElementById('msg-input');
+        textarea.className = 'message-textarea-mock ' + className;
+      }
+    </script>
+</body>
+</html>
